@@ -1,0 +1,810 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+
+/* css style for static header bar */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #333;
+  height: 84px;
+  border-bottom: 4px solid #FFC107;
+}
+
+.navbar {
+  display: flex;
+  padding: 0 10px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar input#menu-toggler {
+  display: none;
+}
+
+.navbar #hamburger-btn {
+  cursor: pointer;
+  display: none;
+}
+
+.navbar .all-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .all-links li {
+  position: relative;
+  list-style: none;
+  font-weight: 600;
+}
+
+.active {
+  background: #ffc107;
+  border-radius: 10px;
+}
+
+.active a {
+  color: #000;
+}
+
+.navbar .logo a {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+}
+
+header a {
+  text-decoration: none;
+  color: #fff;
+  height: 100%;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+
+.unvisible {
+  display: none !important;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 80px 0 0;
+}
+
+section h2 {
+  font-size: 2rem;
+}
+
+section>p {
+  text-align: center;
+}
+
+/*css style for footer*/
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 100px 0;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(270deg, #ffa514 0%, #ffdc00 50%, #ffa514 100%);
+  background-color: yellow;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/*
+---------------------------------------------------------
+--------------------- Home Page CSS ---------------------
+---------------------------------------------------------
+*/
+
+/* css style for home page video*/
+.homepage {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.homepage::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* css style for secound menu bar (TIMELINE / EXPANSION OVERVIEW /QUIZ GAME)*/
+.secound-menu-bar {
+  width: 100%;
+  background-image: linear-gradient(270deg, #ffa514 0%, #ffdc00 50%, #ffa514 100%);
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+}
+
+.secound-menu-bar .item {
+  padding: 28px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.secound-menu-bar a {
+  text-decoration: none;
+  color: black;
+}
+
+.secound-menu-bar .mid {
+  border-left: 3px solid #ffffff;
+  border-right: 3px solid #ffffff;
+}
+
+.secound-menu-bar .item:hover {
+  background: #ffffff;
+}
+
+/*css style for timeline section */
+
+.timeline {
+  width: 100%;
+  background: url(../images/pattern-grey.png);
+  background-position: center 65%;
+  background-size: cover;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  position: relative;
+  
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgb(0 0 0 / 49%);
+}
+
+.timeline h2 {
+  z-index: 1;
+  color: #ffffffe0;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  max-height: auto;
+  overflow-y: hidden;
+  overflow-x: scroll !important;
+  padding: 45px 60px;
+  transform: scroll(calc(var(--i, 0)/var(--n)*-100%));
+  scroll-behavior: smooth;
+}
+
+.slider::-webkit-scrollbar {
+  height: 5px;
+  width: 150px;
+  display: none;
+}
+
+.slider::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.slider::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.slider::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.slide {
+  position: relative;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.slide img {
+  height: 100%;
+  width: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: .25s ease-in-out;
+}
+
+.slider-control {
+  display: flex;
+}
+
+.control-btn {
+  background-color: #FFC107;
+  text-align: center;
+  color: #000;
+  cursor: pointer;
+  padding: 8px 30px;
+  position: relative;
+  margin: 0 15px;
+}
+
+.slide-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  display: flex;
+  border-radius: 15px;
+  visibility: hidden;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  border: 5px solid #FFC107;
+  color: #fff;
+}
+
+.slide-text h2 {
+  color: #FFC107;
+}
+
+.slide-body:hover .slide-text {
+  visibility: visible;
+}
+
+/* css style for overview section */
+
+.overview {
+  width: 100%;
+  background: url(../images/pattern-white.png);
+  background-position: center 65%;
+  background-size: cover;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overview .content {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overview .content p {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.overview .content a {
+  padding: 20px 20px;
+  background: #ffc107;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/*css style for quiz section*/
+
+.quiz-section .row {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.quiz-section .row .col {
+  padding: 0 10px;
+  width: calc(100% / 2 - 50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quiz-section .row .col img {
+  width: 100%;
+}
+
+.quiz-section .col h2 {
+  font-size: 35px;
+  text-align: center;
+  color: #fff;
+}
+
+.quiz-section .col p {
+  text-align: center;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.quiz-section .col a {
+  padding: 20px 20px;
+  background: #ffc107;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.quiz-section {
+  background: #11181f;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.quiz {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.popup {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 50px;
+  display: none;
+}
+
+.popup__content {
+  display: none;
+  color: #fff;
+  min-height: 200px;
+}
+
+.question-visible {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup_visible {
+  display: flex;
+}
+
+.popup__button {
+  margin: 8px auto 0;
+  padding: 8px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  background-color: #FFC107;
+  color: #000;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+.popup__button:disabled {
+  background-color: #dfdfdf;
+  color: #313131;
+}
+
+.quiz__answers {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.quiz__question {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0;
+  padding: 16px 0 40px;
+  text-align: center;
+  color: #fff;
+}
+
+.quiz__answers img {
+  max-width: 220px;
+  min-width: 79px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+/*
+---------------------------------------------------------
+--------------------- Carde Page CSS ---------------------
+---------------------------------------------------------
+*/
+
+/*css style for card page baner*/
+
+.card-page-header {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background: url(../images/pattern-grey.png);
+  background-position: center 65%;
+  background-size: cover;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-page-header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgb(0 0 0 / 49%);
+}
+
+.card-page-header .content {
+  display: flex;
+  height: 85%;
+  z-index: 3;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 84px;
+}
+
+.card-page-header .content .text {
+  margin-bottom: 40px;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-page-header img {
+  width: 80%;
+  max-width: 400px;
+}
+
+.card-page-header .content h1 {
+  font-size: 35px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.scroll-btn {
+  text-align: center;
+  color: #fff;
+}
+
+/*css style for cards section*/
+
+.cards-section {
+  background: url(../images/pattern-white.png);
+  background-position: center 65%;
+}
+
+.cards-section .card img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin-top: 50px;
+  padding: 0 10px;
+  justify-content: center;
+}
+
+#container .card {
+  width: 280px;
+  height: 380px;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 20px;
+  perspective: 500px;
+  position: relative;
+  transition: transform .2s;
+}
+
+#container .card:hover {
+  transform: scale(1.1);
+}
+
+#container .card .content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/*css style for card full screen*/
+.full-image {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #101010cc;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.full-image img {
+  height: 100%;
+  border-radius: 25px;
+}
+
+/*
+---------------------------------------------------------
+--------------------- Shop Page CSS ---------------------
+---------------------------------------------------------
+*/
+
+.shop-section {
+  background: url(../images/pattern-white.png);
+  background-position: center 65%;
+}
+
+.shop-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  padding: 80px 0;
+}
+
+.shop-container .card {
+  width: 350px;
+  max-width: 350px;
+  padding: 15px;
+  background: #ffffff;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: transform .2s;
+}
+
+.shop-container .card:hover {
+  transform: scale(1.05);
+}
+
+.shop-container .card img {
+  width: 100%;
+  padding: 25px;
+}
+
+.shop-container .card h2 {
+  font-size: 18px;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.shop-container .card a {
+  text-decoration: none;
+  padding: 10px 20px;
+  background: #ffc107;
+  color: #000;
+  font-weight: 600;
+  margin: 15px;
+}
+
+
+
+@media screen and (max-width: 860px) {
+
+  
+  .navbar .all-links {
+    position: fixed;
+    left: -100%;
+    width: 300px;
+    display: block;
+    height: 100vh;
+    top: 75px;
+    background: #333;
+    transition: left 0.3s ease;
+  }
+
+  
+  .navbar #menu-toggler:checked~.all-links {
+    left: 0;
+    padding: 20px;
+  }
+
+  #hamburger-btn {
+    padding: 15px;
+  }
+
+  .navbar .all-links li {
+    font-size: 18px;
+  }
+
+  .navbar #hamburger-btn {
+    display: block;
+  }
+
+  /*end css for mobile nav bar*/
+
+  section>p {
+    text-align: center;
+  }
+
+  section .cards .card {
+    width: calc(100% / 2 - 15px);
+    margin-bottom: 30px;
+  }
+
+  .homepage .content h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .homepage .content .text {
+    font-size: 17px;
+  }
+
+  .contact .row {
+    flex-direction: column;
+  }
+
+  .contact .row .col {
+    width: 100%;
+  }
+
+  .contact .row .col:last-child {
+    margin-top: 40px;
+  }
+
+}
+
+@media screen and (max-width: 560px) {
+  section .cards .card {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .full-image img {
+    width: 100%;
+    height: auto;
+  }
+}
+.lead-board-section {
+  width: 100%;
+  background: url(../images/pattern-white.png);
+  background-position: center 65%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+}
+    
+#lead-board {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 30px;
+}
+    
+#lead-board td,
+#customers th {
+  padding: 8px;
+  color: #fff;
+  border: 1px solid #ffffff;
+}
+    
+#lead-board tr:nth-child(even) {
+  background-color: #11181fe0;
+}
+    
+#lead-board tr:nth-child(odd) {
+  background-color: #11181fe0;
+}
+    
+#lead-board th {
+  text-align: left;
+  background-color: #ffba0c;
+  color: white;
+  padding: 8px;
+  border: 1px solid #ffffff;
+}
+              
+footer .age {
+  width: auto;
+}
+  
+footer textarea {
+  width: 100%;
+  height: 100px;
+  border: none;
+}
+  
+footer button {
+  
+  padding: 15px;
+  border: none;
+  background: #11181f;
+  color: #fff;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
